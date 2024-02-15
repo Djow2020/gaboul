@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification Préfecture</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.banner {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.banner h1 {
+  margin: 0;
+  animation: shake 5s infinite;
+}
+
+.logo {
+  width: 90%; /* Utilisation de pourcentage pour la largeur */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.logo p {
+  font-size: 16px;
+  color: #666;
+}
+
+.logo form {
+  margin-top: 20px;
+}
+
+.logo input[type="text"],
+.logo input[type="email"],
+.logo input[type="tel"],
+.logo input[type="submit"],
+.logo select {
+  width: calc(100% - 5%);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.logo input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.logo input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.logo input[type="text"]:focus,
+.logo input[type="email"]:focus,
+.logo input[type="tel"]:focus,
+.logo input[type="submit"]:focus,
+.logo select:focus {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(-5px); }
+}
+
+.check-btn {
+  display: block;
+  width: 220px;
+  height: 50px;
+  margin: 20px auto;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.check-btn:hover {
+  background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>Notification Préfecture</h1>
+  <p>Recevez des notifications et des alertes en temps réel</p>
+</div>
+
+<div class="logo">
+  <h1>Recevez des notifications importantes</h1>
+  <p>Inscrivez-vous dès maintenant pour rester informé en temps réel</p>
+  <form action="votre_script.php" method="post">
+    <input type="text" name="nom" placeholder="Nom" required>
+    <input type="text" name="prenom" placeholder="Prénom" required>
+    <input type="email" name="email" placeholder="Adresse e-mail" required>
+    <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+    <input type="text" name="ville" placeholder="Ville" required>
+    <input type="text" name="code_postal" placeholder="Code postal" required>
+    <select name="prefecture" required>
+      <option value="" disabled selected hidden>Sélectionnez votre préfecture</option>
+      <option value="mayotte">Mayotte</option>
+      <option value="guadeloupe">Guadeloupe (Pointe-à-Pitre)</option>
+    </select>
+    <select name="motif" required>
+      <option value="" disabled selected hidden>Sélectionnez le motif de prise de rendez-vous</option>
+      <option value="premiere_demande">Première demande</option>
+      <option value="renouvellement">Renouvellement</option>
+    </select>
+    <input type="submit" value="S'inscrire">
+  </form>
+  <a href="verifie.html" class="check-btn">Vérifiez un RDV BETA</a>
+</div>
+
+</body>
+</html>

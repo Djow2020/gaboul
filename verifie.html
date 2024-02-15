@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification Préfecture</title>
+<style>
+@keyframes moveLetters {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.banner {
+  background-color: #4CAF50;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+
+.banner h1 {
+  animation: moveLetters 4s infinite; /* Animation pour bouger les lettres */
+  animation-delay: 7s; /* Délai de 7 secondes avant le début de l'animation */
+}
+
+.logo {
+  width: 80%; /* Utilisation de pourcentage pour la largeur */
+  margin: 20px auto;
+  padding: 30px; /* Augmentation du padding pour plus d'espace autour du texte */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.logo p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Styles pour l'animation de scan */
+@keyframes scan {
+  0% { transform: scaleY(0); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0); }
+}
+
+.loader {
+  margin: 60px auto;
+  width: 150px; /* Taille fixe pour l'animation de scan */
+  height: 150px; /* Taille fixe pour l'animation de scan */
+  border: 2px solid #3498db;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #3498db);
+  animation: scan 2s infinite;
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>Notification Préfecture</h1>
+  <p>Recevez des notifications et des alertes en temps réel</p>
+</div>
+
+<div class="logo">
+  <h1>Restez informé des disponibilités de rendez-vous</h1>
+  <p>Notre site vérifie en temps réel les disponibilités de rendez-vous sur le site de la préfecture et vous informe dès qu'une nouvelle disponibilité est détectée par une alerte sonore et visuelle.</p>
+</div>
+
+<!-- Animation de scan -->
+<div class="loader"></div>
+
+</body>
+</html>
